@@ -11,17 +11,18 @@ var confirmNumber;
 var confirmSpecialChar;
 
 //Window prompts to confirm user choices
-function generatePassword() {
-  var confirmLength = (window.prompt("How long would you like your password to be? You may choose between 1-128 characters."));
+//not recognizing for some reasin -- figure out
+function writePassword() {
+  var confirmLength = window.prompt("How long would you like your password to be? You may choose between 1-128 characters.");
 }
 
 while (confirmLength <=1 || confirmLength >=129) {
   alert("You must choose a number between 1-128")
-  var confirmLength = (window.prompt("How long would you like your password to be? You may choose between 1-128 characters."))
+  var confirmLength = window.prompt("How long would you like your password to be? You may choose between 1-128 characters.");
 }  
-  var confirmLowerCase = (window.prompt("Would you like to have lower case characters? Click OK for 'yes' CANCEL for 'no'."));
-  var confirmUpperCase = (window.prompt("Would you like to have upper case characters? Click OK for 'yes' CANCEL for 'no'."));
-  var confirmSpecialChar = (window.prompt("Would you like to have special characters? Click OK for 'yes' CANCEL for 'no'."));
+  var confirmLowerCase = window.prompt("Would you like to have lower case characters? Click OK for 'yes' CANCEL for 'no'.");
+  var confirmUpperCase = window.prompt("Would you like to have upper case characters? Click OK for 'yes' CANCEL for 'no'.");
+  var confirmSpecialChar = window.prompt("Would you like to have special characters? Click OK for 'yes' CANCEL for 'no'.");
 
 //Password generation
 var passwordChar = [];
@@ -54,12 +55,12 @@ for (var i = 0; i < confirmLength; i++) {
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
+  passwordText.value = password;
 // }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)}
