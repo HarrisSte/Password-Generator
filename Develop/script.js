@@ -1,3 +1,13 @@
+//START Generate password requirements
+var lowerCase = "";
+var upperCase = "";
+var numer = "";
+var specialChar = "";
+
+
+
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
