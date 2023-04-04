@@ -12,49 +12,42 @@ var confirmSpecialChar;
 
 //Window prompts to confirm user choices
 function generatePassword() {
-  var confirmLength = window.prompt("How long would you like your password to be? You may choose between 1-128 characters.");
+  var confirmLength = (window.prompt("How long would you like your password to be? You may choose between 1-128 characters."));
+}
+
+while(confirmLength <=1 || confirmLength >=129) {
+  alert("You must choose a number between 1-128")
 }  
-  
-  var confirmLowerCase = window.prompt("Would you like to have lower case characters? Click OK for 'yes' CANCEL for 'no'.");
-  var confirmUpperCase = window.prompt("Would you like to have upper case characters? Click OK for 'yes' CANCEL for 'no'.");
-  var confirmSpecialChar = window.prompt("Would you like to have special characters? Click OK for 'yes' CANCEL for 'no'.");
+  var confirmLowerCase = (window.prompt("Would you like to have lower case characters? Click OK for 'yes' CANCEL for 'no'."));
+  var confirmUpperCase = (window.prompt("Would you like to have upper case characters? Click OK for 'yes' CANCEL for 'no'."));
+  var confirmSpecialChar = (window.prompt("Would you like to have special characters? Click OK for 'yes' CANCEL for 'no'."));
 
 //Password generation
-var password = [];
+var passwordChar = [];
 
 if (confirmLowerCase) {
-  password = password.concat(lowerCase);
+  passwordChar = passwordChar.concat(lowerCase);
 }
 
 if (confirmUpperCase) {
-  password = password.concat(upperCase);
+  passwordChar = passwordChar.concat(upperCase);
 }
 
 if (confirmNumber) {
-  password = password.concat(number);
+  passwordChar = passwordChar.concat(number);
 }
 
 if (confirmSpecialChar) {
-  password = password.concat(specialChar);
+  passwordChar = passwordChar.concat(specialChar);
 }
 
-console.log(password)
+console.log(passwordChar)
 
 var randomPassword = ""
-
 for (var i = 0; i < confirmLength; i++) {
   randomPassword = randomPassword + password[Math.floor(Math.random() * password.length)];
   console.log(randomPassword)
 }
-
-
-
-
-
-
-
-
-
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -65,8 +58,7 @@ var generateBtn = document.querySelector("#generate");
 //   var passwordText = document.querySelector("#password");
 
 //   passwordText.value = password;
-
-//}
+// }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", generatePassword);
+generateBtn.addEventListener("click", writePassword);
