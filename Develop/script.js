@@ -20,7 +20,7 @@ function generatePassword() {
   var confirmSpecialChar = window.prompt("Would you like to have special characters? Click OK for 'yes' CANCEL for 'no'.");
 
 //Password generation
-var = password = [];
+var password = [];
 
 if (confirmLowerCase) {
   password = password.concat(lowerCase);
@@ -44,7 +44,7 @@ var randomPassword = ""
 
 for (var i = 0; i < confirmLength; i++) {
   randomPassword = randomPassword + password[Math.floor(Math.random() * password.length)];
-
+  console.log(randomPassword)
 }
 
 
@@ -69,4 +69,4 @@ var generateBtn = document.querySelector("#generate");
 //}
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", generatePassword);
