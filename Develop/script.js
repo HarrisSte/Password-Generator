@@ -25,7 +25,7 @@ function collectData() {
 }
 
 //Password generation
-function TEMPNAME() {
+function generatePassword() {
   if (confirmLowerCase) {
     passwordChar = passwordChar.concat(lowerCase);
   }
@@ -41,20 +41,12 @@ function TEMPNAME() {
   if (confirmSpecialChar) {
     passwordChar = passwordChar.concat(specialChar);
   }
-  var randomPassword = ''
+  var randomPassword = '';
    for (var i = 0; i < confirmLength; i++) {
   randomPassword = randomPassword + passwordChar[Math.floor(Math.random() * passwordChar.length)];
-
-  console.log(randomPassword)
  }
+ return randomPassword;
 }
-
-console.log(passwordChar)
-
-
-
-// Assignment Code
-var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
@@ -63,6 +55,9 @@ function writePassword() {
 
   passwordText.value = password;
 }
+
+// Assignment Code
+var generateBtn = document.querySelector('#generate');
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword)
