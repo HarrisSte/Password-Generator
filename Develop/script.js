@@ -1,5 +1,4 @@
 //Setting up the arrays - I want to tidy these up, if possible. 
-
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z'];
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z'];
 var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -15,21 +14,25 @@ var confirmSpecialChar;
 //Window prompts to confirm user choices
 function collectNumberInput(userPrompt) {
   var response = window.prompt(userPrompt);
-  if (response >= 8 && response <= 128) {
-    return response;
+  if (response < 8 || response > 128 || isNaN(response)) {
+    
+    return false;
   }
-  else {
-    return 0;
-  }
+  return response;
 }
 
 function collectInput(userPrompt) {
   return window.confirm(userPrompt);
 }
 
-//add stop prompt if ppl don't choose right number if confirm length =0
+//add stop prompt if ppl don't choose right number; if confirm length =0
 function collectData() {
   confirmLength = collectNumberInput('How long would you like your password to be? You may choose between 8-128 characters.');
+   if (!confirmLength) {
+    window.alert ("Must be a number between 8 and 128")
+    return "";
+   }
+
   confirmLowerCase = collectInput("Would you like to have lower case characters?");
   confirmNumber = collectInput("Would you like to have numbers?")
   confirmUpperCase = collectInput("Would you like to have upper case characters?");
@@ -39,6 +42,11 @@ function collectData() {
 //Password generation
 //Make sure to add stop
 function generatePassword() {
+  if (confirmLowerCase + confirmNumber + confirmSpecialChar + confirmUpperCase <1) {
+    window.alert ("Please choose at least one character.")
+    return "";
+  }
+  passwordChar = []
   if (confirmLowerCase) {
     passwordChar = passwordChar.concat(lowerCase);
   }
