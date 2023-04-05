@@ -1,9 +1,9 @@
 # Password Generator
 
 # Description
-This project is intended to create a password generator that allows the user to select specific parameters to their desired password outcome. Upon clicking the 'generate password' button, users are then prompted for the following criteria: password legnth, lower case characters, upper case characters, numerical characters, and special chatacters. Once the desired characteristics are chosen, the outcome will then be logged and displayed on the webpage.
+This project is a password generator that allows users to select specific parameters for their desired password outcome. Upon clicking the 'generate password' button, users are prompted to indicate which criteria they want for their password: password length, lower case characters, upper case characters, numerical characters, and special characters. Once the desired characteristics are selected, the result is logged and displayed on the webpage.
 
-If the user does not select numbers between 8 and 128, they will be presented an error message. The user will also be prompted if they do not select the at least one character parameter.
+If the user does not select numbers between 8 and 128, or at least one character, they will be presented with an error message and returned to the initial page where they began. 
 
 # Link
 ADD LINK TO DEPLOYED SITE
@@ -12,4 +12,4 @@ ADD LINK TO DEPLOYED SITE
 ADD SCREENSHOT OF DEPLOYED SITE
 
 # Contribtions
-For this project, I utilized help from my tutor, Ben Martin during a one-on-one session. I also referenced websites such as W3Schools, MDN, StackOverflow, as well as the resources provided to my by my instructr in the bootcamp, to aid in supplementing my process of developing this project. 
+For this project, I utilized multiple resources to aid in the outcome of this project. I acquired help from my tutor, Ben Martin, via a one-on-one session. The resources provided by my instructor in the boot camp aided in supplementing my process of developing this project. I referenced outside sources, such as websites and tutorial videos, through W3Schools, MDN, and StackOverflow. I also conferred with a colleague, Andrew Zümwalt, when I ran in to an obstacle. 
