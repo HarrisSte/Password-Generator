@@ -7,7 +7,7 @@ var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P'
 var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialChar = ['!', '%', '&', ',', '*', '+', '-', '.', '/', '<', '>', '?','~'];
 
-var passwordChar;
+var passwordChar=[];
 var confirmLength;
 var confirmLowerCase;
 var confirmUpperCase;
@@ -17,11 +17,17 @@ var confirmSpecialChar;
 //Window prompts to confirm user choices
 //not recognizing for some reason -- figure out
 function collectData() {
-  confirmLength = window.prompt('How long would you like your password to be? You may choose between 1-128 characters.');
-  confirmLowerCase = window.prompt("Would you like to have lower case characters? Click OK for 'yes' CANCEL for 'no'.");
-  confirmNumber = window.prompt("Would you like to have numbers? Click OK for 'yes' CANCEL for 'no'.")
-  confirmUpperCase = window.prompt("Would you like to have upper case characters? Click OK for 'yes' CANCEL for 'no'.");
-  confirmSpecialChar = window.prompt("Would you like to have special characters? Click OK for 'yes' CANCEL for 'no'.");
+  confirmLength = collectInput('How long would you like your password to be? You may choose between 8-128 characters.');
+  confirmLowerCase = collectInput("Would you like to have lower case characters? Type YES or NO.");
+  confirmNumber = collectInput("Would you like to have numbers? Click OK for 'yes' CANCEL for 'no'.")
+  confirmUpperCase = collectInput("Would you like to have upper case characters? Click OK for 'yes' CANCEL for 'no'.");
+  confirmSpecialChar = collectInput("Would you like to have special characters? Click OK for 'yes' CANCEL for 'no'.");
+}
+
+function collectInput(userPrompt) {
+  var response = window.prompt(userPrompt);
+   return response;
+
 }
 
 //Password generation
@@ -41,6 +47,9 @@ function generatePassword() {
   if (confirmSpecialChar) {
     passwordChar = passwordChar.concat(specialChar);
   }
+
+  console.log(passwordChar);
+
   var randomPassword = '';
    for (var i = 0; i < confirmLength; i++) {
   randomPassword = randomPassword + passwordChar[Math.floor(Math.random() * passwordChar.length)];
@@ -50,9 +59,9 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
+  collectData();
   var password = generatePassword(); //collects info from user
   var passwordText = document.querySelector('#password');
-
   passwordText.value = password;
 }
 
