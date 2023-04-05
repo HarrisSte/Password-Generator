@@ -15,7 +15,7 @@ var confirmSpecialChar;
 function collectNumberInput(userPrompt) {
   var response = window.prompt(userPrompt);
   if (response < 8 || response > 128 || isNaN(response)) {
-    
+
     return false;
   }
   return response;
@@ -28,11 +28,10 @@ function collectInput(userPrompt) {
 //add stop prompt if ppl don't choose right number; if confirm length =0
 function collectData() {
   confirmLength = collectNumberInput('How long would you like your password to be? You may choose between 8-128 characters.');
-   if (!confirmLength) {
-    window.alert ("Must be a number between 8 and 128")
+  if (!confirmLength) {
+    window.alert("You must select a number between 8 and 128.")
     return "";
-   }
-
+  }
   confirmLowerCase = collectInput("Would you like to have lower case characters?");
   confirmNumber = collectInput("Would you like to have numbers?")
   confirmUpperCase = collectInput("Would you like to have upper case characters?");
@@ -42,8 +41,8 @@ function collectData() {
 //Password generation
 //Make sure to add stop
 function generatePassword() {
-  if (confirmLowerCase + confirmNumber + confirmSpecialChar + confirmUpperCase <1) {
-    window.alert ("Please choose at least one character.")
+  if (confirmLowerCase + confirmNumber + confirmSpecialChar + confirmUpperCase < 1) {
+    window.alert("Please choose at least one character.")
     return "";
   }
   passwordChar = []
