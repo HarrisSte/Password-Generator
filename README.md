@@ -6,10 +6,12 @@ This project is a password generator that allows users to select specific parame
 If the user does not select numbers between 8 and 128, or at least one character, they will be presented with an error message and returned to the initial page where they began. 
 
 # Link
-ADD LINK TO DEPLOYED SITE
+https://harrisste.github.io/Password-Generator/
 
 # Screenshot
-ADD SCREENSHOT OF DEPLOYED SITE
+![M3Chall](https://user-images.githubusercontent.com/126029841/230277916-21dba55a-397c-46cb-8971-6673b95221f3.PNG)
+
 
 # Contribtions
 For this project, I utilized multiple resources to aid in the outcome of this project. I acquired help from my tutor, Ben Martin, via a one-on-one session. The resources provided by my instructor in the boot camp aided in supplementing my process of developing this project. I referenced outside sources, such as websites and tutorial videos, through W3Schools, MDN, and StackOverflow. I also conferred with a colleague, Andrew Zümwalt, when I ran in to an obstacle. 
+
